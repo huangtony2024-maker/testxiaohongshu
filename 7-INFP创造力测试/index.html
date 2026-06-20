@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理测试</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 开始页面 -->
+    <div id="start-page" class="page active">
+        <div class="container">
+            <div class="title-area">
+                <h1 id="test-title">心理测试</h1>
+                <p id="test-desc">探索你的内心世界</p>
+            </div>
+            <button class="btn-primary" onclick="startTest()">开始测试</button>
+            <p class="tips">预计用时 1 分钟</p>
+        </div>
+    </div>
+
+    <!-- 问题页面 -->
+    <div id="question-page" class="page">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+            <p class="question-num" id="question-num">第 1 题</p>
+            <h2 class="question-text" id="question-text"></h2>
+            <div class="options" id="options"></div>
+        </div>
+    </div>
+
+    <!-- 结果页面 -->
+    <div id="result-page" class="page">
+        <div class="container">
+            <div class="result-card">
+                <div class="result-icon" id="result-icon">🌟</div>
+                <h2 class="result-title" id="result-title"></h2>
+                <div class="result-tags" id="result-tags"></div>
+                <p class="result-desc" id="result-desc"></p>
+                <div class="result-details" id="result-details"></div>
+            </div>
+            <button class="btn-secondary" onclick="restartTest()">重新测试</button>
+            <button class="btn-share" onclick="shareResult()">分享结果</button>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
