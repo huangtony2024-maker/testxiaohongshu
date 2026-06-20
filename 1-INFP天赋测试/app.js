@@ -35,10 +35,11 @@ function loadQuestion() {
     const optionsContainer = document.getElementById('options');
     optionsContainer.innerHTML = '';
 
+    const optionLabels = ['A', 'B', 'C', 'D'];
     question.options.forEach((option, index) => {
         const btn = document.createElement('button');
         btn.className = 'option-btn';
-        btn.textContent = option.text;
+        btn.innerHTML = `<span class="option-label">${optionLabels[index]}</span><span class="option-text">${option.text}</span>`;
         btn.onclick = () => selectOption(option.type);
         optionsContainer.appendChild(btn);
     });
@@ -89,11 +90,17 @@ function showResult() {
 
     // 更新详情
     const detailsContainer = document.getElementById('result-details');
-    detailsContainer.innerHTML = '<h4>📖 详细解读</h4><ul>';
+    detailsContainer.innerHTML = '<h4>📖 专属天赋诊断报告</h4><div class="report-content">';
     result.details.forEach(detail => {
-        detailsContainer.innerHTML += `<li>${detail}</li>`;
+        if (detail === "") {
+            detailsContainer.innerHTML += '<br>';
+        } else if (detail.startsWith("【")) {
+            detailsContainer.innerHTML += `<div class="report-section">${detail}</div>`;
+        } else {
+            detailsContainer.innerHTML += `<p class="report-text">${detail}</p>`;
+        }
     });
-    detailsContainer.innerHTML += '</ul>';
+    detailsContainer.innerHTML += '</div>';
 
     // 更新进度条到100%
     document.getElementById('progress').style.width = '100%';

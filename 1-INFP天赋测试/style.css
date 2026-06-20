@@ -263,6 +263,27 @@ h1 {
     font-weight: 500;
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.option-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #FF6B9D 0%, #C44AFF 100%);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.option-text {
+    flex: 1;
 }
 
 .option-btn::before {
@@ -353,28 +374,38 @@ h1 {
 }
 
 .result-details h4 {
-    color: #333;
-    margin-bottom: 16px;
-    font-size: 16px;
-    font-weight: 600;
+    color: #C44AFF;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
 }
 
-.result-details ul {
-    list-style: none;
+.report-content {
     padding: 0;
 }
 
-.result-details li {
-    padding: 12px 0;
-    color: #555;
-    font-size: 14px;
-    line-height: 1.6;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+.report-section {
+    color: #333;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(196, 74, 255, 0.2);
 }
 
-.result-details li:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+.report-section:first-child {
+    margin-top: 0;
+}
+
+.report-text {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 8px 0;
+    padding-left: 12px;
+    border-left: 3px solid rgba(196, 74, 255, 0.3);
 }
 
 .result-details li::before {
